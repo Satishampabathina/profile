@@ -1,0 +1,25 @@
+import random
+
+
+responses = {
+    "hi": ["Hello!", "Hi there!", "Hey! How can I assist you?"],
+    "how are you": ["I'm doing well, thank you!", "I'm just a program, but I'm good!", "I'm fine, how about you?"],
+    "bye": ["Goodbye!", "See you later!", "Have a great day!"],
+}
+
+def chatbot():
+    print("Chatbot: Hi! Type 'bye' to end the conversation.")
+    
+    while True:
+        user_input = input("You: ").lower()
+        
+        if user_input in responses:
+            print(f"Chatbot: {random.choice(responses[user_input])}")
+        else:
+            print("Chatbot: Sorry, I don't understand that.")
+        
+        if user_input == "bye":
+            break
+
+# Start the chatbot
+chatbot()
